@@ -46,3 +46,15 @@ group :development do
   gem 'spring'
 end
 
+
+gem 'devise'
+gem 'devise-i18n'
+gem 'high_voltage'
+
+group :development do
+  gem 'hub', :require=>nil
+  gem 'quiet_assets'
+  gem 'rails_apps_pages'
+  gem 'rails_layout'
+end
+
