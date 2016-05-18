@@ -1,1 +1,8 @@
 pl:
+  activerecord:
+    errors:
+      models:
+        user:
+          attributes:
+            reset_password_token:
+              invalid: "problem z tokenem autentykacji"
