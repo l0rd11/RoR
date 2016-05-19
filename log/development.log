@@ -1,0 +1,378 @@
+  [1m[36m (22.4ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL) [0m
+  [1m[35m (0.2ms)[0m  select sqlite_version(*)
+  [1m[36m (12.3ms)[0m  [1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.2ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+Migrating to CreateTweets (20141120164740)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.9ms)[0m  CREATE TABLE "tweets" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "user_id" integer, "body" text, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20141120164740"]]
+  [1m[35m (12.1ms)[0m  commit transaction
+Migrating to CreateUsers (20141120172924)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.7ms)[0m  CREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "provider" varchar, "uid" varchar, "name" varchar, "token" varchar, "secret" varchar, "profile_image" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20141120172924"]]
+  [1m[35m (11.2ms)[0m  commit transaction
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+
+
+Started GET "/" for 149.156.96.15 at 2016-05-19 15:37:53 +0000
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by TweetsController#index as HTML
+  [1m[35mTweet Load (0.3ms)[0m  SELECT "tweets".* FROM "tweets"
+  Rendered tweets/index.html.erb within layouts/application (8.2ms)
+Warning. Error encountered while saving cache a150661e738ba18a4dfdc7b6c20ed510044a5236/application.css.scssc: can't dump anonymous class #<Class:0x000000042c9030>
+
+Warning. Error encountered while saving cache 05f07cad745ec2a8170967b73095fd8dc93bfe32/_bootstrap.scssc: can't dump anonymous class #<Class:0x000000042c9030>
+
+Warning. Error encountered while saving cache 43ebf76b66d96b4f172ddac37e78d56e51a8e126/_variables.scssc: can't dump anonymous class #<Class:0x000000042c9030>
+
+Warning. Error encountered while saving cache 43ebf76b66d96b4f172ddac37e78d56e51a8e126/_mixins.scssc: can't dump anonymous class #<Class:0x000000042c9030>
+
+Warning. Error encountered while saving cache 6bf5b08b2392312f4a5e69a8568ab945ba181136/_hide-text.scssc: can't dump anonymous class #<Class:0x000000042c9030>
+
+Warning. Error encountered while saving cache 6bf5b08b2392312f4a5e69a8568ab945ba181136/_opacity.scssc: can't dump anonymous class #<Class:0x000000042c9030>
+
+Warning. Error encountered while saving cache 6bf5b08b2392312f4a5e69a8568ab945ba181136/_image.scssc: can't dump anonymous class #<Class:0x000000042c9030>
+
+Warning. Error encountered while saving cache 6bf5b08b2392312f4a5e69a8568ab945ba181136/_labels.scssc: can't dump anonymous class #<Class:0x000000042c9030>
+
+Warning. Error encountered while saving cache 6bf5b08b2392312f4a5e69a8568ab945ba181136/_reset-filter.scssc: can't dump anonymous class #<Class:0x000000042c9030>
+
+Warning. Error encountered while saving cache 6bf5b08b2392312f4a5e69a8568ab945ba181136/_resize.scssc: can't dump anonymous class #<Class:0x000000042c9030>
+
+Warning. Error encountered while saving cache 6bf5b08b2392312f4a5e69a8568ab945ba181136/_responsive-visibility.scssc: can't dump anonymous class #<Class:0x000000042c9030>
+
+Warning. Error encountered while saving cache 6bf5b08b2392312f4a5e69a8568ab945ba181136/_size.scssc: can't dump anonymous class #<Class:0x000000042c9030>
+
+Warning. Error encountered while saving cache 6bf5b08b2392312f4a5e69a8568ab945ba181136/_tab-focus.scssc: can't dump anonymous class #<Class:0x000000042c9030>
+
+Warning. Error encountered while saving cache 6bf5b08b2392312f4a5e69a8568ab945ba181136/_text-emphasis.scssc: can't dump anonymous class #<Class:0x000000042c9030>
+
+Warning. Error encountered while saving cache 6bf5b08b2392312f4a5e69a8568ab945ba181136/_text-overflow.scssc: can't dump anonymous class #<Class:0x000000042c9030>
+
+Warning. Error encountered while saving cache 6bf5b08b2392312f4a5e69a8568ab945ba181136/_vendor-prefixes.scssc: can't dump anonymous class #<Class:0x000000042c9030>
+
+Warning. Error encountered while saving cache 6bf5b08b2392312f4a5e69a8568ab945ba181136/_alerts.scssc: can't dump anonymous class #<Class:0x000000042c9030>
+
+Warning. Error encountered while saving cache 6bf5b08b2392312f4a5e69a8568ab945ba181136/_buttons.scssc: can't dump anonymous class #<Class:0x000000042c9030>
+
+Warning. Error encountered while saving cache 6bf5b08b2392312f4a5e69a8568ab945ba181136/_panels.scssc: can't dump anonymous class #<Class:0x000000042c9030>
+
+Warning. Error encountered while saving cache 6bf5b08b2392312f4a5e69a8568ab945ba181136/_pagination.scssc: can't dump anonymous class #<Class:0x000000042c9030>
+
+Warning. Error encountered while saving cache 6bf5b08b2392312f4a5e69a8568ab945ba181136/_list-group.scssc: can't dump anonymous class #<Class:0x000000042c9030>
+
+Warning. Error encountered while saving cache 6bf5b08b2392312f4a5e69a8568ab945ba181136/_nav-divider.scssc: can't dump anonymous class #<Class:0x000000042c9030>
+
+Warning. Error encountered while saving cache 6bf5b08b2392312f4a5e69a8568ab945ba181136/_forms.scssc: can't dump anonymous class #<Class:0x000000042c9030>
+
+Warning. Error encountered while saving cache 6bf5b08b2392312f4a5e69a8568ab945ba181136/_progress-bar.scssc: can't dump anonymous class #<Class:0x000000042c9030>
+
+Warning. Error encountered while saving cache 6bf5b08b2392312f4a5e69a8568ab945ba181136/_table-row.scssc: can't dump anonymous class #<Class:0x000000042c9030>
+
+Warning. Error encountered while saving cache 6bf5b08b2392312f4a5e69a8568ab945ba181136/_background-variant.scssc: can't dump anonymous class #<Class:0x000000042c9030>
+
+Warning. Error encountered while saving cache 6bf5b08b2392312f4a5e69a8568ab945ba181136/_border-radius.scssc: can't dump anonymous class #<Class:0x000000042c9030>
+
+Warning. Error encountered while saving cache 6bf5b08b2392312f4a5e69a8568ab945ba181136/_gradients.scssc: can't dump anonymous class #<Class:0x000000042c9030>
+
+Warning. Error encountered while saving cache 6bf5b08b2392312f4a5e69a8568ab945ba181136/_clearfix.scssc: can't dump anonymous class #<Class:0x000000042c9030>
+
+Warning. Error encountered while saving cache 6bf5b08b2392312f4a5e69a8568ab945ba181136/_center-block.scssc: can't dump anonymous class #<Class:0x000000042c9030>
+
+Warning. Error encountered while saving cache 6bf5b08b2392312f4a5e69a8568ab945ba181136/_nav-vertical-align.scssc: can't dump anonymous class #<Class:0x000000042c9030>
+
+Warning. Error encountered while saving cache 6bf5b08b2392312f4a5e69a8568ab945ba181136/_grid-framework.scssc: can't dump anonymous class #<Class:0x000000042c9030>
+
+Warning. Error encountered while saving cache 6bf5b08b2392312f4a5e69a8568ab945ba181136/_grid.scssc: can't dump anonymous class #<Class:0x000000042c9030>
+
+Warning. Error encountered while saving cache 43ebf76b66d96b4f172ddac37e78d56e51a8e126/_normalize.scssc: can't dump anonymous class #<Class:0x000000042c9030>
+
+Warning. Error encountered while saving cache 43ebf76b66d96b4f172ddac37e78d56e51a8e126/_print.scssc: can't dump anonymous class #<Class:0x000000042c9030>
+
+Warning. Error encountered while saving cache 43ebf76b66d96b4f172ddac37e78d56e51a8e126/_glyphicons.scssc: can't dump anonymous class #<Class:0x000000042c9030>
+
+Warning. Error encountered while saving cache 43ebf76b66d96b4f172ddac37e78d56e51a8e126/_scaffolding.scssc: can't dump anonymous class #<Class:0x000000042c9030>
+
+Warning. Error encountered while saving cache 43ebf76b66d96b4f172ddac37e78d56e51a8e126/_type.scssc: can't dump anonymous class #<Class:0x000000042c9030>
+
+Warning. Error encountered while saving cache 43ebf76b66d96b4f172ddac37e78d56e51a8e126/_code.scssc: can't dump anonymous class #<Class:0x000000042c9030>
+
+Warning. Error encountered while saving cache 43ebf76b66d96b4f172ddac37e78d56e51a8e126/_grid.scssc: can't dump anonymous class #<Class:0x000000042c9030>
+
+Warning. Error encountered while saving cache 43ebf76b66d96b4f172ddac37e78d56e51a8e126/_tables.scssc: can't dump anonymous class #<Class:0x000000042c9030>
+
+Warning. Error encountered while saving cache 43ebf76b66d96b4f172ddac37e78d56e51a8e126/_forms.scssc: can't dump anonymous class #<Class:0x000000042c9030>
+
+Warning. Error encountered while saving cache 43ebf76b66d96b4f172ddac37e78d56e51a8e126/_buttons.scssc: can't dump anonymous class #<Class:0x000000042c9030>
+
+Warning. Error encountered while saving cache 43ebf76b66d96b4f172ddac37e78d56e51a8e126/_component-animations.scssc: can't dump anonymous class #<Class:0x000000042c9030>
+
+Warning. Error encountered while saving cache 43ebf76b66d96b4f172ddac37e78d56e51a8e126/_dropdowns.scssc: can't dump anonymous class #<Class:0x000000042c9030>
+
+Warning. Error encountered while saving cache 43ebf76b66d96b4f172ddac37e78d56e51a8e126/_button-groups.scssc: can't dump anonymous class #<Class:0x000000042c9030>
+
+Warning. Error encountered while saving cache 43ebf76b66d96b4f172ddac37e78d56e51a8e126/_input-groups.scssc: can't dump anonymous class #<Class:0x000000042c9030>
+
+Warning. Error encountered while saving cache 43ebf76b66d96b4f172ddac37e78d56e51a8e126/_navs.scssc: can't dump anonymous class #<Class:0x000000042c9030>
+
+Warning. Error encountered while saving cache 43ebf76b66d96b4f172ddac37e78d56e51a8e126/_navbar.scssc: can't dump anonymous class #<Class:0x000000042c9030>
+
+Warning. Error encountered while saving cache 43ebf76b66d96b4f172ddac37e78d56e51a8e126/_breadcrumbs.scssc: can't dump anonymous class #<Class:0x000000042c9030>
+
+Warning. Error encountered while saving cache 43ebf76b66d96b4f172ddac37e78d56e51a8e126/_pagination.scssc: can't dump anonymous class #<Class:0x000000042c9030>
+
+Warning. Error encountered while saving cache 43ebf76b66d96b4f172ddac37e78d56e51a8e126/_pager.scssc: can't dump anonymous class #<Class:0x000000042c9030>
+
+Warning. Error encountered while saving cache 43ebf76b66d96b4f172ddac37e78d56e51a8e126/_labels.scssc: can't dump anonymous class #<Class:0x000000042c9030>
+
+Warning. Error encountered while saving cache 43ebf76b66d96b4f172ddac37e78d56e51a8e126/_badges.scssc: can't dump anonymous class #<Class:0x000000042c9030>
+
+Warning. Error encountered while saving cache 43ebf76b66d96b4f172ddac37e78d56e51a8e126/_jumbotron.scssc: can't dump anonymous class #<Class:0x000000042c9030>
+
+Warning. Error encountered while saving cache 43ebf76b66d96b4f172ddac37e78d56e51a8e126/_thumbnails.scssc: can't dump anonymous class #<Class:0x000000042c9030>
+
+Warning. Error encountered while saving cache 43ebf76b66d96b4f172ddac37e78d56e51a8e126/_alerts.scssc: can't dump anonymous class #<Class:0x000000042c9030>
+
+Warning. Error encountered while saving cache 43ebf76b66d96b4f172ddac37e78d56e51a8e126/_progress-bars.scssc: can't dump anonymous class #<Class:0x000000042c9030>
+
+Warning. Error encountered while saving cache 43ebf76b66d96b4f172ddac37e78d56e51a8e126/_media.scssc: can't dump anonymous class #<Class:0x000000042c9030>
+
+Warning. Error encountered while saving cache 43ebf76b66d96b4f172ddac37e78d56e51a8e126/_list-group.scssc: can't dump anonymous class #<Class:0x000000042c9030>
+
+Warning. Error encountered while saving cache 43ebf76b66d96b4f172ddac37e78d56e51a8e126/_panels.scssc: can't dump anonymous class #<Class:0x000000042c9030>
+
+Warning. Error encountered while saving cache 43ebf76b66d96b4f172ddac37e78d56e51a8e126/_responsive-embed.scssc: can't dump anonymous class #<Class:0x000000042c9030>
+
+Warning. Error encountered while saving cache 43ebf76b66d96b4f172ddac37e78d56e51a8e126/_wells.scssc: can't dump anonymous class #<Class:0x000000042c9030>
+
+Warning. Error encountered while saving cache 43ebf76b66d96b4f172ddac37e78d56e51a8e126/_close.scssc: can't dump anonymous class #<Class:0x000000042c9030>
+
+Warning. Error encountered while saving cache 43ebf76b66d96b4f172ddac37e78d56e51a8e126/_modals.scssc: can't dump anonymous class #<Class:0x000000042c9030>
+
+Warning. Error encountered while saving cache 43ebf76b66d96b4f172ddac37e78d56e51a8e126/_tooltip.scssc: can't dump anonymous class #<Class:0x000000042c9030>
+
+Warning. Error encountered while saving cache 43ebf76b66d96b4f172ddac37e78d56e51a8e126/_popovers.scssc: can't dump anonymous class #<Class:0x000000042c9030>
+
+Warning. Error encountered while saving cache 43ebf76b66d96b4f172ddac37e78d56e51a8e126/_carousel.scssc: can't dump anonymous class #<Class:0x000000042c9030>
+
+Warning. Error encountered while saving cache 43ebf76b66d96b4f172ddac37e78d56e51a8e126/_utilities.scssc: can't dump anonymous class #<Class:0x000000042c9030>
+
+Warning. Error encountered while saving cache 43ebf76b66d96b4f172ddac37e78d56e51a8e126/_responsive-utilities.scssc: can't dump anonymous class #<Class:0x000000042c9030>
+
+Warning. Error encountered while saving cache a150661e738ba18a4dfdc7b6c20ed510044a5236/tweets.css.scssc: can't dump anonymous class #<Class:0x000000042c9030>
+
+Completed 200 OK in 4730ms (Views: 4698.0ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/assets/tweets-c15e1c77cb5b3534b610348cb9f3c56d.css?body=1" for 149.156.96.15 at 2016-05-19 15:37:58 +0000
+
+
+Started GET "/assets/application-0e4f7d353ccf1f0fdfe1ad4ba91f8bd0.css?body=1" for 149.156.96.15 at 2016-05-19 15:37:58 +0000
+
+
+Started GET "/assets/jquery-dfb1e594c3e61a04cc388702c3feec1f.js?body=1" for 149.156.96.15 at 2016-05-19 15:37:59 +0000
+
+
+Started GET "/assets/turbolinks-60c7d150bd7b7a75d67e6d1f0d4129a6.js?body=1" for 149.156.96.15 at 2016-05-19 15:37:59 +0000
+
+
+Started GET "/assets/application-31c0dfc3ed324b1e96004541c4c70537.js?body=1" for 149.156.96.15 at 2016-05-19 15:37:59 +0000
+
+
+Started GET "/assets/jquery_ujs-ae280aaa31faeb1eb0139b5cd60e3356.js?body=1" for 149.156.96.15 at 2016-05-19 15:37:59 +0000
+
+
+Started GET "/assets/tweets-5cf9e471f6dbffd4600ae141132a5888.js?body=1" for 149.156.96.15 at 2016-05-19 15:37:59 +0000
+
+
+Started GET "/tweets/new" for 149.156.96.15 at 2016-05-19 15:38:04 +0000
+Processing by TweetsController#new as HTML
+  Rendered tweets/_form.html.erb (77.1ms)
+  Rendered tweets/new.html.erb within layouts/application (90.6ms)
+Completed 200 OK in 264ms (Views: 247.7ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/tweets/new" for 149.156.96.15 at 2016-05-19 15:38:10 +0000
+Processing by TweetsController#new as HTML
+  Rendered tweets/_form.html.erb (5.1ms)
+  Rendered tweets/new.html.erb within layouts/application (9.9ms)
+Completed 200 OK in 181ms (Views: 179.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/tweets/auth/twitter" for 149.156.96.15 at 2016-05-19 15:38:19 +0000
+
+ActionController::RoutingError (No route matches [GET] "/tweets/auth/twitter"):
+  web-console (2.0.0.beta4) lib/action_dispatch/debug_exceptions.rb:22:in `middleware_call'
+  web-console (2.0.0.beta4) lib/action_dispatch/debug_exceptions.rb:13:in `call'
+  actionpack (4.2.0.beta4) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.0.beta4) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.0.beta4) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.0.beta4) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.0.beta4) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.0.beta4) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.0.beta4) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.0.beta4) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.0.beta) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.0.beta) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.2.0.beta4) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.0.beta) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.0.beta4) lib/action_dispatch/middleware/static.rb:113:in `call'
+  rack (1.6.0.beta) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.0.beta4) lib/rails/engine.rb:514:in `call'
+  railties (4.2.0.beta4) lib/rails/application.rb:161:in `call'
+  rack (1.6.0.beta) lib/rack/tempfile_reaper.rb:15:in `call'
+  rack (1.6.0.beta) lib/rack/lint.rb:49:in `_call'
+  rack (1.6.0.beta) lib/rack/lint.rb:37:in `call'
+  rack (1.6.0.beta) lib/rack/showexceptions.rb:24:in `call'
+  rack (1.6.0.beta) lib/rack/commonlogger.rb:33:in `call'
+  rack (1.6.0.beta) lib/rack/chunked.rb:54:in `call'
+  rack (1.6.0.beta) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.0.beta) lib/rack/handler/webrick.rb:89:in `service'
+  /usr/local/rvm/rubies/ruby-2.2.4/lib/ruby/2.2.0/webrick/httpserver.rb:138:in `service'
+  /usr/local/rvm/rubies/ruby-2.2.4/lib/ruby/2.2.0/webrick/httpserver.rb:94:in `run'
+  /usr/local/rvm/rubies/ruby-2.2.4/lib/ruby/2.2.0/webrick/server.rb:294:in `block in start_thread'
+
+
+  Rendered /usr/local/rvm/gems/ruby-2.2.4/gems/web-console-2.0.0.beta4/lib/action_dispatch/templates/rescues/_trace.html.erb (2.4ms)
+  Rendered /usr/local/rvm/gems/ruby-2.2.4/gems/web-console-2.0.0.beta4/lib/action_dispatch/templates/routes/_route.html.erb (2.2ms)
+  Rendered /usr/local/rvm/gems/ruby-2.2.4/gems/web-console-2.0.0.beta4/lib/action_dispatch/templates/routes/_table.html.erb (11.7ms)
+  Rendered /usr/local/rvm/gems/ruby-2.2.4/gems/web-console-2.0.0.beta4/lib/action_dispatch/templates/rescues/routing_error.html.erb within rescues/layout (113.5ms)
+
+
+Started GET "/" for 149.156.96.15 at 2016-05-19 15:38:22 +0000
+Processing by TweetsController#index as HTML
+  [1m[36mTweet Load (0.5ms)[0m  [1mSELECT "tweets".* FROM "tweets"[0m
+  Rendered tweets/index.html.erb within layouts/application (2.7ms)
+Completed 200 OK in 148ms (Views: 145.6ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/auth/twitter" for 149.156.96.15 at 2016-05-19 15:38:30 +0000
+
+
+Started GET "/auth/twitter/callback?oauth_token=YLE09wAAAAAAvIsAAAABVMmrDXU&oauth_verifier=xGoYOtf50EJRqVFCKV9zyOOw7MQEwaaV" for 149.156.96.15 at 2016-05-19 15:38:32 +0000
+Processing by SessionsController#create as HTML
+  Parameters: {"oauth_token"=>"YLE09wAAAAAAvIsAAAABVMmrDXU", "oauth_verifier"=>"xGoYOtf50EJRqVFCKV9zyOOw7MQEwaaV", "provider"=>"twitter"}
+  [1m[35mUser Load (0.4ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."provider" = ? AND "users"."uid" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["provider", "twitter"], ["uid", "1106934434"]]
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (2.6ms)[0m  INSERT INTO "users" ("created_at", "provider", "uid", "updated_at") VALUES (?, ?, ?, ?)  [["created_at", "2016-05-19 15:38:34.093810"], ["provider", "twitter"], ["uid", "1106934434"], ["updated_at", "2016-05-19 15:38:34.093810"]]
+  [1m[36m (12.9ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.5ms)[0m  [1mUPDATE "users" SET "name" = ?, "profile_image" = ?, "secret" = ?, "token" = ?, "updated_at" = ? WHERE "users"."id" = 1[0m  [["name", "MateuszGawe2"], ["profile_image", "http://abs.twimg.com/sticky/default_profile_images/default_profile_4_normal.png"], ["secret", "LIIBDQyEqh4Y2rFC9hf1uRsq48HRmZu6iE72541dByU8s"], ["token", "1106934434-QEKAJLIM7WNtVjA96SpPDzjaxzslwx8oQHYXrtG"], ["updated_at", "2016-05-19 15:38:34.113404"]]
+  [1m[35m (13.1ms)[0m  commit transaction
+Redirected to https://twt-vlizer.c9users.io/
+Completed 302 Found in 90ms (ActiveRecord: 31.0ms)
+
+
+Started GET "/" for 149.156.96.15 at 2016-05-19 15:38:34 +0000
+Processing by TweetsController#index as HTML
+  [1m[36mTweet Load (0.3ms)[0m  [1mSELECT "tweets".* FROM "tweets"[0m
+  Rendered tweets/index.html.erb within layouts/application (2.0ms)
+  [1m[35mUser Load (0.6ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+Completed 200 OK in 175ms (Views: 172.3ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/tweets/new" for 149.156.96.15 at 2016-05-19 15:38:37 +0000
+Processing by TweetsController#new as HTML
+  Rendered tweets/_form.html.erb (4.5ms)
+  Rendered tweets/new.html.erb within layouts/application (7.3ms)
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+Completed 200 OK in 152ms (Views: 150.1ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/tweets" for 149.156.96.15 at 2016-05-19 15:38:40 +0000
+Processing by TweetsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"I/seHNflhUHtWGyxeI7IeiFfOFqswD6VO41YqOmpVGoG8cRI/YdqB+aReYw6aoB9BojYd3s4ya/Dz9J4HwPjXA==", "tweet"=>{"body"=>"heuhue"}, "commit"=>"Create Tweet"}
+  [1m[35mUser Load (0.7ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36m (2.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mSQL (0.8ms)[0m  [1mINSERT INTO "tweets" ("body", "created_at", "updated_at", "user_id") VALUES (?, ?, ?, ?)[0m  [["body", "heuhue"], ["created_at", "2016-05-19 15:38:40.842312"], ["updated_at", "2016-05-19 15:38:40.842312"], ["user_id", 1]]
+  [1m[35m (16.1ms)[0m  commit transaction
+Redirected to https://twt-vlizer.c9users.io/tweets/1
+Completed 302 Found in 662ms (ActiveRecord: 19.7ms)
+
+
+Started GET "/tweets/1" for 149.156.96.15 at 2016-05-19 15:38:41 +0000
+Processing by TweetsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mTweet Load (0.3ms)[0m  [1mSELECT  "tweets".* FROM "tweets" WHERE "tweets"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered tweets/show.html.erb within layouts/application (1.3ms)
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+Completed 200 OK in 163ms (Views: 156.5ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/tweets" for 149.156.96.15 at 2016-05-19 15:39:39 +0000
+Processing by TweetsController#index as HTML
+  [1m[36mTweet Load (0.4ms)[0m  [1mSELECT "tweets".* FROM "tweets"[0m
+  Rendered tweets/index.html.erb within layouts/application (3.8ms)
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+Completed 200 OK in 145ms (Views: 142.5ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/tweets/new" for 149.156.96.15 at 2016-05-19 15:39:42 +0000
+Processing by TweetsController#new as HTML
+  Rendered tweets/_form.html.erb (2.5ms)
+  Rendered tweets/new.html.erb within layouts/application (5.6ms)
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+Completed 200 OK in 142ms (Views: 140.2ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/tweets" for 149.156.96.15 at 2016-05-19 15:40:11 +0000
+Processing by TweetsController#index as HTML
+  [1m[35mTweet Load (0.4ms)[0m  SELECT "tweets".* FROM "tweets"
+  Rendered tweets/index.html.erb within layouts/application (4.0ms)
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+Completed 200 OK in 167ms (Views: 164.5ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/tweets/1" for 149.156.96.15 at 2016-05-19 15:40:16 +0000
+Processing by TweetsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mTweet Load (0.4ms)[0m  SELECT  "tweets".* FROM "tweets" WHERE "tweets"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered tweets/show.html.erb within layouts/application (2.9ms)
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+Completed 200 OK in 202ms (Views: 196.9ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/tweets/2" for 149.156.96.15 at 2016-05-19 15:40:28 +0000
+Processing by TweetsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[35mTweet Load (0.3ms)[0m  SELECT  "tweets".* FROM "tweets" WHERE "tweets"."id" = ? LIMIT 1  [["id", 2]]
+Completed 404 Not Found in 3ms
+
+ActiveRecord::RecordNotFound (Couldn't find Tweet with 'id'=2):
+  app/controllers/tweets_controller.rb:42:in `set_tweet'
+
+
+  Rendered /usr/local/rvm/gems/ruby-2.2.4/gems/web-console-2.0.0.beta4/lib/action_dispatch/templates/rescues/_source.erb (22.6ms)
+  Rendered /usr/local/rvm/gems/ruby-2.2.4/gems/web-console-2.0.0.beta4/lib/action_dispatch/templates/rescues/_trace.html.erb (8.1ms)
+  Rendered /usr/local/rvm/gems/ruby-2.2.4/gems/web-console-2.0.0.beta4/lib/action_dispatch/templates/rescues/_request_and_response.html.erb (1.4ms)
+  Rendered /usr/local/rvm/gems/ruby-2.2.4/gems/web-console-2.0.0.beta4/lib/action_dispatch/templates/rescues/_web_console.html.erb (1.1ms)
+  Rendered /usr/local/rvm/gems/ruby-2.2.4/gems/web-console-2.0.0.beta4/lib/action_dispatch/templates/rescues/diagnostics.html.erb within rescues/layout (146.3ms)
+
+
+Started GET "/tweets/0" for 149.156.96.15 at 2016-05-19 15:40:35 +0000
+Processing by TweetsController#show as HTML
+  Parameters: {"id"=>"0"}
+  [1m[36mTweet Load (0.2ms)[0m  [1mSELECT  "tweets".* FROM "tweets" WHERE "tweets"."id" = ? LIMIT 1[0m  [["id", 0]]
+Completed 404 Not Found in 3ms
+
+ActiveRecord::RecordNotFound (Couldn't find Tweet with 'id'=0):
+  app/controllers/tweets_controller.rb:42:in `set_tweet'
+
+
+  Rendered /usr/local/rvm/gems/ruby-2.2.4/gems/web-console-2.0.0.beta4/lib/action_dispatch/templates/rescues/_source.erb (34.5ms)
+  Rendered /usr/local/rvm/gems/ruby-2.2.4/gems/web-console-2.0.0.beta4/lib/action_dispatch/templates/rescues/_trace.html.erb (4.7ms)
+  Rendered /usr/local/rvm/gems/ruby-2.2.4/gems/web-console-2.0.0.beta4/lib/action_dispatch/templates/rescues/_request_and_response.html.erb (2.2ms)
+  Rendered /usr/local/rvm/gems/ruby-2.2.4/gems/web-console-2.0.0.beta4/lib/action_dispatch/templates/rescues/_web_console.html.erb (6.3ms)
+  Rendered /usr/local/rvm/gems/ruby-2.2.4/gems/web-console-2.0.0.beta4/lib/action_dispatch/templates/rescues/diagnostics.html.erb within rescues/layout (148.6ms)
+
+
+Started GET "/tweets/1/edit" for 149.156.96.15 at 2016-05-19 15:41:57 +0000
+Processing by TweetsController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mTweet Load (0.3ms)[0m  SELECT  "tweets".* FROM "tweets" WHERE "tweets"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered tweets/_form.html.erb (5.1ms)
+  Rendered tweets/edit.html.erb within layouts/application (13.2ms)
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+Completed 200 OK in 223ms (Views: 220.4ms | ActiveRecord: 0.6ms)
