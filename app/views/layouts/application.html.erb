@@ -13,8 +13,17 @@
       <%= render 'layouts/navigation' %>
     </header>
     <main role="main">
+
       <%= render 'layouts/messages' %>
       <%= yield %>
+      <!--#tutaj cos zjebalem-->
+      <% if current_userTwitter %>
+      <%= current_userTwitter.name %>
+      <% end %>
+
     </main>
   </body>
 </html>
+
+
+
