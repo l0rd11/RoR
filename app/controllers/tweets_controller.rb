@@ -1,15 +1,20 @@
 class TweetsController < ApplicationController
-    before_action :set_tweet, only: [:show, :edit, :update, :destroy]
-
+     before_action :set_tweet, only: [ :edit, :update]
+    before_action :authenticate_user!
     respond_to :html
 
     def index
-        @tweets = Tweet.all
+
+        @tweets =  current_userTwitter.twitter.user_timeline(current_userTwitter.name) #Tweet.all
+        # @tweets.each do |tweet|
+        #   tweet.userTwitter_id = current_userTwitter.id;
+        # end
         respond_with(@tweets)
+
     end
 
     def show
-        respond_with(@tweets)
+
     end
 
     def new
@@ -32,10 +37,19 @@ class TweetsController < ApplicationController
         respond_with(@tweet)
     end
 
+    def destroy
+      # @tweet.destroy
+      current_userTwitter.twitter.destroy_status(params[:id])
+      redirect_to tweets_path, :notice => "tweet deleted."
+      # respond_with(@tweet)
+    end
 
     private
     def set_tweet
-        @tweet = Tweet.find(params[:id])
+        if params[:method] != "delete"
+          @tweet = Tweet.find(params[:id])
+        end
+
     end
 
     def tweet_params

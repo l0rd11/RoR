@@ -12,3 +12,4 @@ class CreateUserTwitters < ActiveRecord::Migration
     end
   end
 end
+

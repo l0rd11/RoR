@@ -1,0 +1,28 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Twoja Tablica</h1>
+
+<table>
+  <thead>
+  <tr>
+    <th>date</th>
+    <th>Body</th>
+    <th colspan="5"></th>
+  </tr>
+  </thead>
+
+  <tbody>
+  <% @tweets.each do |tweet| %>
+      <tr>
+        <td><%= tweet.created_at %></td>
+        <td><%= tweet.full_text %></td>
+        <td><%= link_to("Delete ", tweet_path(tweet.id), :data => { :confirm => "Czy jesteś pewny?" }, :method => :delete, :class => 'button-xs')  %></td>
+      </tr>
+  <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Tweet', new_tweet_path %>
+

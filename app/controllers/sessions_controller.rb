@@ -2,7 +2,7 @@ class SessionsController < ApplicationController
     def create
         @userTwitter = UserTwitter.find_or_create_from_auth_hash(auth_hash)
         session[:userTwitter_id] = @userTwitter.id
-        redirect_to root_path
+        redirect_to tweets_path
     end
     
     protected

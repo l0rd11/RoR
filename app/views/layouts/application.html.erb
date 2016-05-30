@@ -2,8 +2,8 @@
 <html>
   <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title><%= content_for?(:title) ? yield(:title) : "Learn Rails" %></title>
-    <meta name="description" content="<%= content_for?(:description) ? yield(:description) : "Learn Rails" %>">
+    <title><%= content_for?(:title) ? yield(:title) : "Twiter-Facebook" %></title>
+    <meta name="description" content="<%= content_for?(:description) ? yield(:description) : "Twiter-Facebook" %>">
     <%= stylesheet_link_tag 'application', media: 'all' %>
     <%= javascript_include_tag 'application' %>
     <%= csrf_meta_tags %>
@@ -17,8 +17,8 @@
       <%= render 'layouts/messages' %>
       <%= yield %>
       <!--#tutaj cos zjebalem-->
-      <% if current_userTwitter %>
-      <%= current_userTwitter.name %>
+      <!--<% if current_userTwitter %>-->
+      <!--<%= current_userTwitter.name %>-->
       <% end %>
 
     </main>
