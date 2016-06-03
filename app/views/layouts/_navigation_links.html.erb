@@ -3,5 +3,5 @@
 <% if current_userTwitter %>
   <li><%= link_to 'tweet', tweets_path %></li>
 <% else %>
-  <li><%= link_to 'tweet', 'auth/twitter' %></li>
+  <li><%= link_to 'tweet', root_path + 'auth/twitter' %></li>
 <% end %>

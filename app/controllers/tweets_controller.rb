@@ -1,5 +1,4 @@
 class TweetsController < ApplicationController
-     before_action :set_tweet, only: [ :edit, :update]
     before_action :authenticate_user!
     respond_to :html
 
@@ -29,13 +28,14 @@ class TweetsController < ApplicationController
         @tweet = Tweet.new(tweet_params)
         @tweet.userTwitter_id = current_userTwitter.id
         @tweet.save
-        respond_with(@tweet)
+        redirect_to tweets_path, :notice => "tweet created."
+
     end
 
-    def update
-        @tweet.update(tweet_params)
-        respond_with(@tweet)
-    end
+    # def update
+    #     @tweet.update(tweet_params)
+    #     respond_with(@tweet)
+    # end
 
     def destroy
       # @tweet.destroy
