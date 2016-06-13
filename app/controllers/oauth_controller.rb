@@ -1,5 +1,10 @@
-def redirect
-  session[:access_token] = Koala::Facebook::OAuth.new(oauth_redirect_url).get_access_token(params[:code]) if params[:code]
+class OauthController < ApplicationController
+  def show
 
-  redirect_to session[:access_token] ? success_path : failure_path
+  end
+  def redirect
+    session[:access_token] = Koala::Facebook::OAuth.new('http://localhost:3000/oauth/redirect').get_access_token(params[:code]) if params[:code]
+
+    redirect_to session[:access_token] ? home_path('index') : page_path('fail')
+  end
 end

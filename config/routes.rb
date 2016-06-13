@@ -2,7 +2,8 @@ Rails.application.routes.draw do
   root to: 'pages#about'
   resources :pages
   resources :home
-
+  get '/oauth/redirect', to: 'oauth#redirect'
+  get '/?code', to: 'oauth#redirect'
 
 
   # The priority is based upon order of creation: first created -> highest priority.

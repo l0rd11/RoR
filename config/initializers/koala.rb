@@ -6,7 +6,7 @@ module Facebook
 
   APP_ID = 611531139007860#Rails.application.secrets.api_key
   SECRET = "f15641fa1e4380b1bebbc6c29d9578e7"#Rails.application.secrets.api_secret
-  CALLBACK_URL = "http://localhost:3000/"#Rails.application.secrets.callback_url
+  CALLBACK_URL = "http://localhost:3000/oauth/redirect"#Rails.application.secrets.callback_url
 end
 
 Koala::Facebook::OAuth.class_eval do
