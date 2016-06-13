@@ -1,0 +1,12 @@
+<table border="0">
+  <% if @likes %>
+      <% for like in @likes %>
+          <tr>
+            <td><b><%=h like%> </b></td>
+          </tr>
+          <tr>
+            <td>&ndash;</td>
+          </tr>
+      <% end %>
+  <% end %>
+</table>

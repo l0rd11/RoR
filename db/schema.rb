@@ -11,14 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160521134214) do
-
-  create_table "tweets", force: :cascade do |t|
-    t.integer  "userTwitter_id"
-    t.text     "body"
-    t.datetime "created_at",     null: false
-    t.datetime "updated_at",     null: false
-  end
+ActiveRecord::Schema.define(version: 20160512134903) do
 
   create_table "user_twitters", force: :cascade do |t|
     t.string   "provider"

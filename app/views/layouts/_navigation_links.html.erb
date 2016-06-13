@@ -5,3 +5,4 @@
 <% else %>
   <li><%= link_to 'tweet', root_path + 'auth/twitter' %></li>
 <% end %>
+<li><%= link_to 'facebook', Koala::Facebook::OAuth.new.url_for_oauth_code(:callback => 'http://localhost:3000/oauth/redirect') %></li>
