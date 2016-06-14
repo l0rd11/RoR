@@ -1,12 +1,20 @@
 <table border="0">
-  <% if @likes %>
-      <% for like in @likes %>
-          <tr>
-            <td><b><%=h like%> </b></td>
-          </tr>
-          <tr>
-            <td>&ndash;</td>
-          </tr>
-      <% end %>
+  <tr>
+    <td><h3>posts</h3></td>
+  </tr>
+  <% @posts.each do |post| %>
+      <tr>
+        <td><%= post["message"]%> </td>
+        <td><%= post["created_time"]%> </td>
+        <td><%= link_to("Delete ", facebook_path(post["id"]), :data => { :confirm => "Czy jesteś pewny?" }, :method => :delete, :class => 'button-xs')  %></td>
+      </tr>
+
   <% end %>
+
 </table>
+<br>
+<%= link_to 'New Post', new_facebook_path %>
+<br><br>
+<%= link_to 'Previous', url_for(:page => @posts.previous_page_params) %>
+<%= link_to 'Next', url_for(:page => @posts.next_page_params) %>
+
