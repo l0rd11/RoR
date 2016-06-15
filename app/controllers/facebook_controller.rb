@@ -1,6 +1,6 @@
 class FacebookController < ApplicationController
   before_action :authenticate_user!
-  before_action :check_loggin? , :init
+  before_action :check_loggin?, :init
   respond_to :html
 
   def init
@@ -26,16 +26,36 @@ class FacebookController < ApplicationController
   end
 
   def index
-    @posts = params[:page] ? @graph.get_page(params[:page]) :@graph.get_connections('me', 'posts')
-    @posts.reject!{|p| p["message"].nil?||p["message"].empty?}
-    respond_with(@posts)
+    @respond = {}
+    @posts = params[:page] ? @graph.get_page(params[:page]) : @graph.get_connections('me', 'posts')
+    @posts.reject! { |p| p["message"].nil?||p["message"].empty? }
+    @posts.each { |post| @coments =@graph.get_connections(post["id"], 'comments')
+      @coments.reject! { |p| p["message"].nil?||p["message"].empty? }
+      @respond[post]=@coments
+    }
+
+    respond_with(@respond)
   end
 
   def show
-    @posts = params[:page] ? @graph.get_page(params[:page]) :@graph.get_connections('me', 'posts')
-    @posts.reject!{|p| p["message"].nil?||p["message"].empty?}
-    respond_with(@posts)
+    @respond = {}
+    @posts = params[:page] ? @graph.get_page(params[:page]) : @graph.get_connections('me', 'posts')
+    @posts.reject! { |p| p["message"].nil?||p["message"].empty? }
+    @posts.each { |post| @coments =@graph.get_connections(post["id"], 'comments')
+    @coments.reject! { |p| p["message"].nil?||p["message"].empty? }
+    @respond[post]=@coments
+    }
+    respond_with(@respond)
   end
+
+  # def new_comment
+  #   @post_id = params[:post_id]
+  # end
+  #
+  # def comment
+  #   @graph.put_comment("999065593523561_999037850193002", "test5")
+  #   redirect_to "/facebook", :notice => "Post comented."
+  # end
 
   private
   def check_loggin?

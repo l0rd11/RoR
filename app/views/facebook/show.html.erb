@@ -1,12 +1,19 @@
-<table border="0">
+<table border="0"  cellpadding = "15">
+
   <tr>
     <td><h3>posts</h3></td>
     <td>Posted at </td>
+    <td>Comments</td>
   </tr>
-  <% @posts.each do |post| %>
+  <% @respond.each do |post,comments| %>
       <tr>
         <td><%= post["message"]%> </td>
         <td><%= post["created_time"]%> </td>
+        <td>
+          <%  comments.each do |comment| %>
+              <li><%= comment["message"]%></li>
+          <% end %>
+        </td>
         <td><%= link_to("Delete ", facebook_path(post["id"]), :data => { :confirm => "Czy jesteś pewny?" }, :method => :delete, :class => 'button-xs')  %></td>
       </tr>
 
