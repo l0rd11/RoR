@@ -53,7 +53,7 @@ class FacebookController < ApplicationController
   # end
   #
   # def comment
-  #   @graph.put_comment("999065593523561_999037850193002", "test5")
+  #   @graph.put_comment(@post_id, params[:comment])
   #   redirect_to "/facebook", :notice => "Post comented."
   # end
 
