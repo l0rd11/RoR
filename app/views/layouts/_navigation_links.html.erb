@@ -1,7 +1,6 @@
 <%# add navigation links to this file %>
 <li><%= link_to 'About', page_path('about') %></li>
-<% if current_userTwitter %>
+
   <li><%= link_to 'tweet', tweets_path %></li>
-<% else %>
-  <li><%= link_to 'tweet', root_path + 'auth/twitter' %></li>
-<% end %>
+
+<li><%= link_to 'facebook', facebook_path(" ") %></li>

@@ -10,6 +10,7 @@ gem 'jbuilder', '~> 2.0'
 gem 'omniauth-twitter'
 gem 'omniauth'
 gem 'twitter'
+gem 'koala'
 group :development, :test do
   gem 'byebug'
 end

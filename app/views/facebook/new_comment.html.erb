@@ -1,0 +1,12 @@
+<%= form_tag( { :action => :comment, }, { :method => :post })  do%>
+    <div class="field">
+      <%= text_field_tag  "comment" %>
+    </div>
+    <div class="actions">
+      <%= submit_tag( "submit" ) %>
+    </div>
+<% end %>
+
+<%= link_to 'Back',  '/facebook' %>
+
+<%= link_to("comment",controller: "facebook", action: "new_comment", post_id: post["id"] )%>

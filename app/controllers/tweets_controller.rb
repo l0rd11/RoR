@@ -1,5 +1,6 @@
 class TweetsController < ApplicationController
     before_action :authenticate_user!
+    before_action :check_loggin?
     respond_to :html
 
     def index
@@ -45,6 +46,12 @@ class TweetsController < ApplicationController
     end
 
     private
+    def check_loggin?
+        if current_userTwitter
+        else
+          redirect_to root_path + 'auth/twitter'
+        end
+    end
     def set_tweet
         if params[:method] != "delete"
           @tweet = Tweet.find(params[:id])
