@@ -1,6 +1,6 @@
 class FacebookController < ApplicationController
   before_action :authenticate_user!
-  before_action :check_loggin?, :init
+  before_action :check_loggin?, :init#, check_loggin_twitter?
   respond_to :html
 
   def init
@@ -23,6 +23,9 @@ class FacebookController < ApplicationController
       @graph.put_wall_post(params[:post])
     end
     redirect_to "/facebook", :notice => "Post created."
+  end
+  def tweet_params
+        params.require(:tweet).permit(:user_id, :post)
   end
 
   def index
@@ -59,6 +62,7 @@ class FacebookController < ApplicationController
 
   private
   def check_loggin?
+  
     if session[:facebook_access_token]
     else
       redirect_to Koala::Facebook::OAuth.new.url_for_oauth_code(:permissions => "publish_actions, public_profile, user_posts", :callback => Rails.application.secrets.facebook_callback_url)

@@ -1,18 +1,14 @@
-class TweetsController < ApplicationController
+class NewsController < ApplicationController
     before_action :authenticate_user!
-    before_action :check_loggin?
+    before_action :check_loggin?, :check_loggin_facebook?, :init
     respond_to :html
    
-    
+    def init
+        @access_token = session["facebook_access_token"]
+        @graph = Koala::Facebook::API.new(@access_token)
+    end
      
     def index
-
-        @tweets =  current_userTwitter.twitter.user_timeline(current_userTwitter.name) #Tweet.all
-        # @tweets.each do |tweet|
-        #   tweet.userTwitter_id = current_userTwitter.id;
-        # end
-        respond_with(@tweets)
-
     end
 
     def show
@@ -31,21 +27,15 @@ class TweetsController < ApplicationController
         @tweet = Tweet.new(tweet_params)
         @tweet.userTwitter_id = current_userTwitter.id
         @tweet.save
-      
-        redirect_to tweets_path, :notice => "tweet created."
+        if params[:tweet][:body]
+            @graph.put_wall_post(params[:tweet][:body])
+        end
+        redirect_to '/', :notice => "Post created"
 
     end
 
-    # def update
-    #     @tweet.update(tweet_params)
-    #     respond_with(@tweet)
-    # end
 
     def destroy
-      # @tweet.destroy
-      current_userTwitter.twitter.destroy_status(params[:id])
-      redirect_to tweets_path, :notice => "tweet deleted."
-      # respond_with(@tweet)
     end
 
     private
@@ -65,7 +55,13 @@ class TweetsController < ApplicationController
     def tweet_params
         params.require(:tweet).permit(:user_id, :body)
     end
-    
+    private
+    def check_loggin_facebook?
+        if session[:facebook_access_token]
+        else
+        redirect_to Koala::Facebook::OAuth.new.url_for_oauth_code(:permissions => "publish_actions, public_profile, user_posts", :callback => Rails.application.secrets.facebook_callback_url)
+        end
+    end
 
 
 

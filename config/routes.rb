@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   resources :users
   resources :tweets
   resources :facebook
+  resources :news
   get '/oauth/redirect', to: 'oauth#redirect'
 
 
