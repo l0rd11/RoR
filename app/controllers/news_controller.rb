@@ -24,11 +24,12 @@ class NewsController < ApplicationController
     end
 
     def create
-        @tweet = Tweet.new(tweet_params)
+        @tweet = Tweet.new
+        @tweet.body = params[:post]
         @tweet.userTwitter_id = current_userTwitter.id
         @tweet.save
-        if params[:tweet][:body]
-            @graph.put_wall_post(params[:tweet][:body])
+        if params[:post]
+            @graph.put_wall_post(params[:post])
         end
         redirect_to '/', :notice => "Post created"
 

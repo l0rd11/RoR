@@ -1,7 +1,11 @@
+<%= form_tag( { :action => :create, }, { :method => :post })  do%>
+<h1>New Post</h1>
+<div class="field">
+  <%= text_field_tag  "post" %>
+</div>
+<div class="actions">
+  <%= submit_tag( "submit" ) %>
+</div>
+<% end %>
 
-
-<h1>Twoja Tablica</h1>
-<br>
-
-<%= link_to 'New Posts on Facebook and Twitter', '/news/new' %>
-
+<%= link_to 'Back',  '/' %>
